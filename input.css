@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.html {
+   @apply overflow-x-hidden scroll-smooth;
+}
+
+
+body {
+    @apply bg-secondcolor font-Montserrat tracking-wider;
+}
+
+section {
+    @apply py-20 md:py-28;
+}
+
+h1 {
+    @apply text-whitecolor text-3xl xl:text-5xl font-bold uppercase;
+}
+
+h2 {
+    @apply text-xl md:text-3xl font-bold uppercase;
+}
+
+h3 {
+    @apply text-xl md:text-2xl font-bold uppercase;
+}
+
+h4 {
+    @apply text-base text-firstcolor font-bold uppercase;
+}
+
+p {
+    @apply text-paragraphcolor;
+}
+
+/* header */
+#nav-menu .nav-link, 
+#nav-menu .phone-number,
+#nav-menu-2 .nav-link,
+#nav-menu-2 .phone-number{
+    @apply text-lg px-5 py-3 duration-300;
+}
+
+#nav-menu-2 .nav-link,
+#nav-menu-2 .phone-number{
+    @apply font-bold;
+}
+
+.phone-number:hover{
+    @apply text-firstcolor;
+}
+
+/* active */
+#nav-menu .nav-link:hover,
+#nav-menu .active{
+    @apply bg-firstcolor text-whitecolor;
+}
+
+#nav-menu-2 .nav-link:hover,
+#nav-menu-2 .active{
+    @apply text-firstcolor;
+}
+
+/* button */
+.btn{
+    @apply border border-firstcolor bg-firstcolor text-whitecolor px-5 py-2 uppercase duration-300; 
+}
+
+.btn:hover{
+    @apply opacity-90;
+}
+
+.btn__outline{
+    @apply bg-transparent;
+}
+
+.btn__outline:hover {
+    @apply bg-firstcolor;
+}
+
+/* carousel */
+.carousel {
+    @apply relative;
+}
+
+.carousel__inner {
+    @apply w-full overflow-hidden after:content-[""] after:block clear-both;
+}
+
+.carousel__item {
+    @apply relative float-left hidden w-full mr-[-100%] ;
+}
+
+/* slide effect */
+.carousel__item__active,
+.carousel__item__pos_next,
+.carousel__item__pos_prev {
+    @apply block;
+}
+
+.carousel__item__pos_next { 
+    @apply left-full;
+}
+
+.carousel__item__pos_prev {
+    @apply left-[-100%];
+}
+
+.carousel__item__next {
+    @apply -translate-x-full duration-500 ease-in-out;
+}
+
+.carousel__item__prev {
+    @apply translate-x-full duration-500 ease-in-out;
+}
+
+.carousel__img {
+    @apply block w-full;
+}
+
+/* fede effect */
+.carousel__fade .carousel__item__pos_next, 
+.carousel__fade .carousel__item__pos_prev {
+    @apply left-0 opacity-0;
+}
+
+.carousel__fade .carousel__item__next,
+.carousel__fade .carousel__item__prev {
+    transform: none;
+    @apply opacity-100 duration-500 ease-in-out;
+}
+
+.carousel__fade .carousel__item__active.carousel__item__next,
+.carousel__fade .carousel__item__active.carousel__item__prev {
+    @apply opacity-0;
+}
+
+.carousel__item h4 {
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: showContent 0.5s ease-in-out forwards;
+}
+
+.carousel__item h4:nth-child(4) {   
+    animation-delay: 0.6s;
+}
+
+.carousel__item h4:nth-child(3) {   
+    animation-delay: 0.8s;
+}
+
+.carousel__item h4:nth-child(2) {   
+    animation-delay: 1.0s;
+}
+
+.carousel__item h4:nth-child(1) {   
+    animation-delay: 1.2s;
+}
+
+@keyframes showContent {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* process */
+.process__tab p,
+.process__tab span{
+    @apply text-graycolor duration-300;
+}
+
+.process__tab:hover p,
+.process__tab-active p{
+    @apply text-whitecolor;
+}
+.process__tab:hover span,
+.process__tab-active span{
+    @apply text-firstcolor;
+}
+
+/* review */
+.swiper-pagination {
+    @apply text-center lg:text-right;
+}
+
+.swiper-pagination-bullet {
+    @apply bg-firstcolor w-3 h-3 lg:h-4 lg:w-4;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    @apply m-3;
+}
